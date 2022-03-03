@@ -32,7 +32,7 @@ function calculate() {
     const storagePrice = getInputValue('storagePrice');
     const deliveryCost = getInputValue('deliveryCost');
 
-    totalPrice = macBookPrice + memoryPrice + storagePrice + deliveryCost;
+    const totalPrice = macBookPrice + memoryPrice + storagePrice + deliveryCost;
     document.getElementById('totalPrice').innerText = totalPrice;
 
    
@@ -41,12 +41,16 @@ function calculate() {
 // Promo code 
 function promoCode() {
     const input = document.getElementById('promoCode');
-    const promoCode = parseInt(input.value);
-    let totalCost = totalPrice;
-    if (promoCode == '10') {
-        totalCost = Math.round(totalPrice*.8);
+    const promoCode =(input.value);
+    console.log(promoCode);
+    let totalCost = document.getElementById('totalPrice').innerText;
+    if (promoCode == 'stevekaku') {
+        totalCost = Math.round(totalCost*.8);
         document.getElementById('totalCost').innerText = totalCost;
-    } else {
+    }if (promoCode == '') {
+        document.getElementById('totalCost').innerText = totalCost; 
+    }
+    else {
         document.getElementById('totalCost').innerText = totalCost; 
     }
 }
