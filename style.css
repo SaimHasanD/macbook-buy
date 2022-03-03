@@ -19,6 +19,7 @@ img{
 .body{
  width: 80%;
 }
-/* .secondcollum{
-    height: 800px;
-} */
+#promoCode{
+    margin-right: 5px;
+    padding: 3px;
+}

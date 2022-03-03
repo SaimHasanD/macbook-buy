@@ -22,7 +22,6 @@ function getProductPrice(id) {
         document.getElementById('deliveryCost').innerText = 20;
     }
     calculate();
-    promoCode();
 }
 
 // calculate total price
@@ -34,27 +33,26 @@ function calculate() {
 
     const totalPrice = macBookPrice + memoryPrice + storagePrice + deliveryCost;
     document.getElementById('totalPrice').innerText = totalPrice;
+    document.getElementById('totalCost').innerText = document.getElementById('totalPrice').innerText;
 
-   
 }
 
 // Promo code 
 function promoCode() {
     const input = document.getElementById('promoCode');
-    const promoCode =(input.value);
+    const promoCode = (input.value);
     console.log(promoCode);
     let totalCost = document.getElementById('totalPrice').innerText;
     if (promoCode == 'stevekaku') {
-        totalCost = Math.round(totalCost*.8);
+        totalCost = Math.round(totalCost * .8);
         document.getElementById('totalCost').innerText = totalCost;
-    }if (promoCode == '') {
-        document.getElementById('totalCost').innerText = totalCost; 
+        alert('Get Your 20% Discount')
     }
     else {
-        document.getElementById('totalCost').innerText = totalCost; 
+        document.getElementById('totalCost').innerText = totalCost;
+        alert('Wrong Promo Code');
     }
 }
-
 
 // get input value
 function getInputValue(id) {
